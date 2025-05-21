@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Comércio Exterior do Brasil</title>
+    <style>
+        :root {
+            --primary: #2C3E50;
+            --secondary: #3498DB;
+            --text-dark: #2C3E50;
+            --text-light: #7F8C8D;
+            --bg-light: #F8F9FA;
+            --bg-gray: #ECF0F1;
+            --accent: #2980B9;
+            --success: #27AE60;
+            --warning: #F39C12;
+            --danger: #E74C3C;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .dashboard-title {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .dashboard-subtitle {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        nav {
+            background-color: var(--accent);
+            padding: 0.5rem 0;
+            position: sticky;
+            top: 86px;
+            z-index: 900;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 0.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            display: block;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        main {
+            padding: 2rem 0;
+        }
+        
+        section {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .section-title {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-subtitle {
+            font-size: 1.25rem;
+            margin: 1.5rem 0 1rem;
+            color: var(--accent);
+        }
+        
+        .plot-container {
+            margin: 2rem 0;
+        }
+        
+        .plot-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -1rem;
+        }
+        
+        .plot-col {
+            flex: 1 1 100%;
+            padding: 1rem;
+        }
+        
+        @media (min-width: 768px) {
+            .plot-col-md-6 {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+        }
+        
+        .plot-card {
+            background-color: var(--bg-gray);
+            border-radius: 8px;
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .plot-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-bottom: 1px solid #ddd;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        
+        .plot-image:hover {
+            opacity: 0.9;
+        }
+        
+        .plot-content {
+            padding: 1.25rem;
+            flex-grow: 1;
+        }
+        
+        .plot-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .plot-description {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        
+        .modal-content img {
+            max-width: 100%;
+            max-height: 90vh;
+        }
+        
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 2.5rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        footer {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+        }
+        
+        .footer-text {
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="dashboard-title">Dashboard de Comércio Exterior do Brasil</h1>
+            <p class="dashboard-subtitle">Análise dos fluxos comerciais, parceiros e produtos</p>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#balanca-comercial">Balança Comercial</a></li>
+                <li><a href="#paises">Países</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#analise-regional">Análise Regional</a></li>
+                <li><a href="#sazonalidade">Sazonalidade</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="container">
+        <!-- Balança Comercial -->
+        <section id="balanca-comercial">
+            <h2 class="section-title">Balança Comercial</h2>
+            <p>Visão geral do saldo comercial brasileiro e dos fluxos de exportação e importação.</p>
+            
+            <div class="plot-container">
+                <div class="plot-row">
+                    <div class="plot-col">
+                        <div class="plot-card">
+                            <img src="output_full/1_saldo_comercial_12m.png" alt="Saldo Comercial Acumulado em 12 meses" class="plot-image" onclick="openModal(this.src)">
+                            <div class="plot-content">
+                                <h3 class="plot-title">Saldo Comercial (Acumulado 12 meses)</h3>
+                                <p class="plot-description">Evolução do saldo comercial brasileiro acumulado em 12 meses, mostrando a diferença entre exportações e importações.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="plot-container">
+                <div class="plot-row">
+                    <div class="plot-col">
+                        <div class="plot-card">
+                            <img src="output_full/2_exportacoes_importacoes_12m.png" alt="Exportações e Importações Acumuladas em 12 meses" class="plot-image" onclick="openModal(this.src)">
+                            <div class="plot-content">
+                                <h3 class="plot-title">Exportações e Importações (Acumulado 12 meses)</h3>
+                                <p class="plot-description">Evolução das exportações e importações brasileiras acumuladas em 12 meses, permitindo comparar os dois fluxos ao longo do tempo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Países -->
+        <section id="paises">
+            <h2 class="section-title">Principais Parceiros Comerciais</h2>
+            <p>Análise dos principais países de destino das exportações e origem das importações brasileiras.</p>
+            
+            <h3 class="section-subtitle">Top 10 Parceiros</h3>
+            <div class="plot-container">
+                <div class="plot-row">
+                    <div class="plot-col plot-col-md-6">
+                        <div class="plot-card">
+                            <img src="output_full/3_top_export_countries.png" alt="Top 10 Países de Destino das Exportações" class="plot-image" onclick="openModal(this.src)">
+                            <div class="plot-content">
+                                <h3 class="plot-title">Principais Destinos das Exportações</h3>
+                                <p class="plot-description">Os 10 maiores mercados para os produtos brasileiros nos últimos 12 meses, com valores e participação percentual.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plot-col plot-col-md-6">
+                        <div class="plot-card">
+                            <img src="output_full/4_top_import_countries.png" alt="Top 10 Países de Origem das Importações" class="plot-image" onclick="openModal(this.src)">
+                            <div class="plot-content">
+                                <h3 class="plot-title">Principais Origens das Importações</h3>
+                                <p class="plot-description">Os 10 maiores fornecedores de produtos para o Brasil nos últimos 12 meses, com valores e participação percentual.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="section-subtitle">Evolução da Participação</h3>
+            <div class="plot-container">
+                <div class="plot-row">
+                    <div class="plot-col plot-col-md-6">
+                        <div class="plot-card">
+                            <img src="output_full/5a_export_country_share_evolution.png" alt="Evolução da Participação dos Países de Exportação" class="plot-image" onclick="openModal(this.src)">
+                            <div class="plot-content">
+                                <h3 class="plot-title">Evolução dos Destinos de Exportação</h3>
+                                <p class="plot-description">Como a participação dos principais destinos das exportações brasileiras tem evoluído ao longo dos anos.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plot-col plot-col-md-6">
+                        <div class="plot-card">
+                            <img src="output_full/5b_import_country_share_evolution.png" alt="Evolução da Participação dos Países de Importação" class="plot-image" onclick="openModal(this.src)">
+                            <div class="plot-content">
+                                <h3 class="plot-title">Evolução das Origens de Importação</h3>
+                                <p class="plot-description">Como a participação dos principais fornecedores para o Brasil tem evoluído ao longo dos anos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Produtos -->
+        <section id="produtos">
+            <h2 class="section-title">Principais Produtos Comercializados</h2>
+            <p>Análise dos principais produtos exportados e importados pelo Brasil, com valores e variações anuais.</p>
+            
+            <h3 class="section-subtitle">Top 10 Produtos</h3>
+            <div class="plot-container">
+                <div class="plot-row">
+                    <div class="plot-col plot-col-md-6">
+                        <div class="plot-card">
+                            <img src="output_full/6a_top_export_products_yoy.png" alt="Top 10 Produtos Exportados com Variação Anual" class="plot-image" onclick="openModal(this.src)">
+                            <div class="plot-content">
+                                <h3 class="plot-title">Principais Produtos Exportados</h3>
+                                <p class="plot-description">Os 10 principais produtos exportados pelo Brasil nos últimos 12 meses, com valores, variação anual e participação percentual.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plot-col plot-col-md-6">
+                        <div class="plot-card">
+                            <img src="output_full/6b_top_import_products_yoy.png" alt="Top 10 Produtos Importados com Variação Anual" class="plot-image" onclick="openModal(this.src)">
+                            <div class="plot-content">
+                                <h3 class="plot-title">Principais Produtos Importados</h3>
+                                <p class="plot-description">Os 10 principais produtos importados pelo Brasil nos últimos 12 meses, com valores, variação anual e participação percentual.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Análise Regional -->
+        <section id="analise-regional">
+            <h2 class="section-title">Análise por Regiões Geográficas</h2>
+            <p>Distribuição e evolução do comércio exterior brasileiro por regiões geográficas.</p>
+            
+            <h3 class="section-subtitle">Distribuição por Região</h3>
+            <div class="plot-container">
+                <div class="plot-row">
+                    <div class="plot-col">
+                        <div class="plot-card">
+                            <img src="output_full/9_region_distribution.png" alt="Distribuição do Comércio por Região" class="plot-image" onclick="openModal(this.src)">
+                            <div class="plot-content">
+                                <h3 class="plot-title">Distribuição do Comércio por Região</h3>
+                                <p class="plot-description">Participação de cada região geográfica nas exportações e importações brasileiras, mostrando a importância relativa de cada região.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="section-subtitle">Evolução por Região</h3>
+            <div class="plot-container">
+                <div class="plot-row">
+                    <div class="plot-col plot-col-md-6">
+                        <div class="plot-card">
+                            <img src="output_full/10a_export_by_region_timeseries.png" alt="Exportações por Região ao Longo do Tempo" class="plot-image" onclick="openModal(this.src)">
+                            <div class="plot-content">
+                                <h3 class="plot-title">Exportações por Região</h3>
+                                <p class="plot-description">Evolução das exportações brasileiras para as principais regiões geográficas ao longo do tempo (acumulado 12 meses).</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plot-col plot-col-md-6">
+                        <div class="plot-card">
+                            <img src="output_full/10b_import_by_region_timeseries.png" alt="Importações por Região ao Longo do Tempo" class="plot-image" onclick="openModal(this.src)">
+                            <div class="plot-content">
+                                <h3 class="plot-title">Importações por Região</h3>
+                                <p class="plot-description">Evolução das importações brasileiras das principais regiões geográficas ao longo do tempo (acumulado 12 meses).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="section-subtitle">Saldo Comercial por Região</h3>
+            <div class="plot-container">
+                <div class="plot-row">
+                    <div class="plot-col">
+                        <div class="plot-card">
+                            <img src="output_full/11_trade_balance_by_region.png" alt="Saldo Comercial por Região" class="plot-image" onclick="openModal(this.src)">
+                            <div class="plot-content">
+                                <h3 class="plot-title">Saldo Comercial por Região</h3>
+                                <p class="plot-description">Saldo comercial (exportações menos importações) por região geográfica, mostrando com quais regiões o Brasil tem superávit ou déficit.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sazonalidade -->
+        <section id="sazonalidade">
+            <h2 class="section-title">Padrões Sazonais</h2>
+            <p>Análise da sazonalidade nos fluxos de comércio exterior brasileiro ao longo do ano.</p>
+            
+            <div class="plot-container">
+                <div class="plot-row">
+                    <div class="plot-col">
+                        <div class="plot-card">
+                            <img src="output_full/7_seasonal_patterns.png" alt="Padrões Sazonais de Comércio" class="plot-image" onclick="openModal(this.src)">
+                            <div class="plot-content">
+                                <h3 class="plot-title">Padrões Sazonais de Comércio</h3>
+                                <p class="plot-description">Média mensal de exportações e importações, mostrando como os fluxos comerciais variam ao longo do ano.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="plot-container">
+                <div class="plot-row">
+                    <div class="plot-col">
+                        <div class="plot-card">
+                            <img src="output_full/8_monthly_yoy_change.png" alt="Variação Mensal Ano a Ano" class="plot-image" onclick="openModal(this.src)">
+                            <div class="plot-content">
+                                <h3 class="plot-title">Variação Mensal Ano a Ano</h3>
+                                <p class="plot-description">Comparação da variação percentual mensal de exportações e importações em relação ao mesmo mês do ano anterior.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <img id="modalImage" src="">
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p class="footer-text">Dashboard de Comércio Exterior do Brasil | Dados: Comex Stat - Ministério da Economia</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Modal para visualização ampliada das imagens
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImage");
+        
+        function openModal(imgSrc) {
+            modal.style.display = "flex";
+            modalImg.src = imgSrc;
+        }
+        
+        function closeModal() {
+            modal.style.display = "none";
+        }
+        
+        // Fechar o modal ao clicar fora da imagem
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+        
+        // Rolagem suave para âncoras
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 140,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
