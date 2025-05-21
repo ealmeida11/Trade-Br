@@ -1,0 +1,2 @@
+Este é um arquivo temporário para criar a pasta output_full.
+Ele pode ser excluído após a criação da pasta. 
