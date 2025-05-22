@@ -1,0 +1,344 @@
+{
+  "A - Agropecuária": {
+    "sector_data": {
+      "Produto": "A - Agropecuária",
+      "Valor_2025": 13003.1025390625,
+      "Valor_2024": 12788.0771484375,
+      "Var_Pct": 1.6814470291137695,
+      "Part_2025": 42.76034164428711,
+      "Part_2024": 42.16657257080078,
+      "MD_2025": 650.1551513671875,
+      "MD_2024": 673.0567016601562
+    },
+    "products_data": [
+      {
+        "Produto": "Soja, mesmo triturada, exceto para semeadura",
+        "Valor_2025": 5903.08864,
+        "Valor_2024": 6286.35107421875,
+        "Var_Pct": -6.096738815307617,
+        "Part_2025": 19.41214370727539,
+        "Part_2024": 20.72820281982422,
+        "MD_2025": 295.154432,
+        "MD_2024": 330.8605651855469
+      },
+      {
+        "Produto": "Café não torrado, não descafeinado, em grão",
+        "Valor_2025": 1250.76672,
+        "Valor_2024": 916.0948486328125,
+        "Var_Pct": 36.532447814941406,
+        "Part_2025": 4.11311149597168,
+        "Part_2024": 3.0206716060638428,
+        "MD_2025": 62.538336,
+        "MD_2024": 48.215518951416016
+      },
+      {
+        "Produto": "Carnes desossadas de bovino, congeladas",
+        "Valor_2025": 1053.445504,
+        "Valor_2024": 791.7099609375,
+        "Var_Pct": 33.05952453613281,
+        "Part_2025": 3.464226484298706,
+        "Part_2024": 2.610532760620117,
+        "MD_2025": 52.6722752,
+        "MD_2024": 41.6689453125
+      },
+      {
+        "Produto": "Outros açúcares de cana",
+        "Valor_2025": 617.82784,
+        "Valor_2024": 774.4717407226562,
+        "Var_Pct": -20.225900650024414,
+        "Part_2025": 2.031709909439087,
+        "Part_2024": 2.553692579269409,
+        "MD_2025": 30.891392,
+        "MD_2024": 40.76167297363281
+      },
+      {
+        "Produto": "Bagaços e outros resíduos sólidos, da extração do óleo de soja",
+        "Valor_2025": 563.030336,
+        "Valor_2024": 639.4312744140625,
+        "Var_Pct": -11.948269844055176,
+        "Part_2025": 1.851509690284729,
+        "Part_2024": 2.108419179916382,
+        "MD_2025": 28.1515168,
+        "MD_2024": 33.65428161621094
+      },
+      {
+        "Produto": "Outras carnes de suíno, congeladas",
+        "Valor_2025": 265.70832,
+        "Valor_2024": 214.57940673828125,
+        "Var_Pct": 23.827505111694336,
+        "Part_2025": 0.8737744688987732,
+        "Part_2024": 0.7075401544570923,
+        "MD_2025": 13.285416,
+        "MD_2024": 11.293652534484863
+      },
+      {
+        "Produto": "Peitos desossados de galinha, comestíveis, congelados",
+        "Valor_2025": 229.849008,
+        "Valor_2024": 0.0,
+        "Var_Pct": 0,
+        "Part_2025": 0.7558521032333374,
+        "Part_2024": 0.0,
+        "MD_2025": 11.492450400000001,
+        "MD_2024": 0.0
+      },
+      {
+        "Produto": "Farinhas e pellets, da extração do óleo de soja",
+        "Valor_2025": 224.96336,
+        "Valor_2024": 242.32667541503906,
+        "Var_Pct": -7.165246963500977,
+        "Part_2025": 0.7397857904434204,
+        "Part_2024": 0.7990322113037109,
+        "MD_2025": 11.248168,
+        "MD_2024": 12.754034996032715
+      },
+      {
+        "Produto": "Carnes desossadas de bovino, frescas ou refrigeradas",
+        "Valor_2025": 157.217408,
+        "Valor_2024": 145.21670532226562,
+        "Var_Pct": 8.263993263244629,
+        "Part_2025": 0.5170050859451294,
+        "Part_2024": 0.478828102350235,
+        "MD_2025": 7.8608704000000005,
+        "MD_2024": 7.642984390258789
+      },
+      {
+        "Produto": "Carnes de galos/galinhas, não cortadas em pedaços, congeladas, sem miudezas",
+        "Valor_2025": 144.797888,
+        "Valor_2024": 159.90391540527344,
+        "Var_Pct": -9.446943283081055,
+        "Part_2025": 0.4761638641357422,
+        "Part_2024": 0.5272567868232727,
+        "MD_2025": 7.239894400000001,
+        "MD_2024": 8.415995597839355
+      }
+    ]
+  },
+  "B - Indústria Extrativa": {
+    "sector_data": {
+      "Produto": "B - Indústria Extrativa",
+      "Valor_2025": 9912.4833984375,
+      "Valor_2024": 10130.29296875,
+      "Var_Pct": -2.1500766277313232,
+      "Part_2025": 32.596927642822266,
+      "Part_2024": 33.40296936035156,
+      "MD_2025": 495.62420654296875,
+      "MD_2024": 533.17333984375
+    },
+    "products_data": [
+      {
+        "Produto": "Óleos brutos de petróleo",
+        "Valor_2025": 4505.279488,
+        "Valor_2024": 4514.76318359375,
+        "Var_Pct": -0.21005868911743164,
+        "Part_2025": 14.815486907958984,
+        "Part_2024": 14.886686325073242,
+        "MD_2025": 225.2639744,
+        "MD_2024": 237.61912536621094
+      },
+      {
+        "Produto": "Minérios de ferro e seus concentrados, exceto as piritas de ferro ustuladas (cinzas de piritas), não aglomerados",
+        "Valor_2025": 1832.75264,
+        "Valor_2024": 2071.604248046875,
+        "Var_Pct": -11.529790878295898,
+        "Part_2025": 6.026956558227539,
+        "Part_2024": 6.830772876739502,
+        "MD_2025": 91.637632,
+        "MD_2024": 109.03179931640625
+      },
+      {
+        "Produto": "Fuel oil",
+        "Valor_2025": 871.670976,
+        "Valor_2024": 934.7200927734375,
+        "Var_Pct": -6.745237350463867,
+        "Part_2025": 2.8664660453796387,
+        "Part_2024": 3.082085132598877,
+        "MD_2025": 43.583548799999996,
+        "MD_2024": 49.19579315185547
+      },
+      {
+        "Produto": "Outros minérios de cobre e seus concentrados",
+        "Valor_2025": 396.269536,
+        "Valor_2024": 268.8846435546875,
+        "Var_Pct": 47.37529754638672,
+        "Part_2025": 1.3031214475631714,
+        "Part_2024": 0.8866026997566223,
+        "MD_2025": 19.8134768,
+        "MD_2024": 14.151823043823242
+      },
+      {
+        "Produto": "Bulhão dourado (bullion doré), em formas brutas, para uso não monetário",
+        "Valor_2025": 364.769376,
+        "Valor_2024": 209.3414764404297,
+        "Var_Pct": 74.24610900878906,
+        "Part_2025": 1.1995339393615723,
+        "Part_2024": 0.6902689337730408,
+        "MD_2025": 18.2384688,
+        "MD_2024": 11.017971992492676
+      },
+      {
+        "Produto": "Minérios de ferro e seus concentrados, exceto as piritas de ferro ustuladas (cinzas de piritas), aglomerados por processo de peletização, de diâmetro superior ou igual a 8mm e inferior ou igual a 18mm",
+        "Valor_2025": 234.864768,
+        "Valor_2024": 340.5956115722656,
+        "Var_Pct": -31.042926788330078,
+        "Part_2025": 0.7723462581634521,
+        "Part_2024": 1.1230577230453491,
+        "MD_2025": 11.743238400000001,
+        "MD_2024": 17.92608642578125
+      },
+      {
+        "Produto": "Outros produtos semimanufaturados de ferro ou aço não ligado, de seção transversal retangular, que contenham, em peso, menos de 0,25 % de carbono",
+        "Valor_2025": 227.85496,
+        "Valor_2024": 267.0901794433594,
+        "Var_Pct": -14.689874649047852,
+        "Part_2025": 0.7492947578430176,
+        "Part_2024": 0.8806857466697693,
+        "MD_2025": 11.392748,
+        "MD_2024": 14.057377815246582
+      },
+      {
+        "Produto": "Ferro-nióbio",
+        "Valor_2025": 198.059168,
+        "Valor_2024": 223.8522186279297,
+        "Var_Pct": -11.522358894348145,
+        "Part_2025": 0.6513121128082275,
+        "Part_2024": 0.7381157279014587,
+        "MD_2025": 9.902958400000001,
+        "MD_2024": 11.781696319580078
+      },
+      {
+        "Produto": "Querosenes de aviação",
+        "Valor_2025": 161.441408,
+        "Valor_2024": 109.67689514160156,
+        "Var_Pct": 47.19728088378906,
+        "Part_2025": 0.5308955907821655,
+        "Part_2024": 0.36164143681526184,
+        "MD_2025": 8.072070400000001,
+        "MD_2024": 5.772468090057373
+      },
+      {
+        "Produto": "Ferro fundido bruto não ligado, que contenha, em peso, 0,5 % ou menos de fósforo",
+        "Valor_2025": 151.26432,
+        "Valor_2024": 95.59964752197266,
+        "Var_Pct": 58.22686004638672,
+        "Part_2025": 0.4974285066127777,
+        "Part_2024": 0.3152240514755249,
+        "MD_2025": 7.563216,
+        "MD_2024": 5.03156042098999
+      }
+    ]
+  },
+  "C - Indústria de Transformação": {
+    "sector_data": {
+      "Produto": "C - Indústria de Transformação",
+      "Valor_2025": 7493.67138671875,
+      "Valor_2024": 7409.15380859375,
+      "Var_Pct": 1.1407136917114258,
+      "Part_2025": 24.642730712890625,
+      "Part_2024": 24.430461883544922,
+      "MD_2025": 374.68359375,
+      "MD_2024": 389.9554748535156
+    },
+    "products_data": [
+      {
+        "Produto": "Pastas químicas de madeira, à soda ou ao sulfato, exceto pastas para dissolução, semibranqueadas ou branqueadas, de não coníferas",
+        "Valor_2025": 627.744128,
+        "Valor_2024": 764.5418090820312,
+        "Var_Pct": -17.892765045166016,
+        "Part_2025": 2.064319133758545,
+        "Part_2024": 2.5209503173828125,
+        "MD_2025": 31.3872064,
+        "MD_2024": 40.239044189453125
+      },
+      {
+        "Produto": "Algodão não cardado nem penteado, simplesmente debulhado",
+        "Valor_2025": 389.126336,
+        "Valor_2024": 473.5812072753906,
+        "Var_Pct": -17.83323860168457,
+        "Part_2025": 1.2796311378479004,
+        "Part_2024": 1.5615558624267578,
+        "MD_2025": 19.4563168,
+        "MD_2024": 24.92532730102539
+      },
+      {
+        "Produto": "Alumina calcinada",
+        "Valor_2025": 263.761136,
+        "Valor_2024": 282.7880859375,
+        "Var_Pct": -6.728344917297363,
+        "Part_2025": 0.867371141910553,
+        "Part_2024": 0.932447075843811,
+        "MD_2025": 13.1880568,
+        "MD_2024": 14.883584022521973
+      },
+      {
+        "Produto": "Automóveis com motor explosão, de cilindrada superior a 1.000 cm3, mas não superior a 1.500 cm3, com capacidade de transporte de pessoas sentadas inferior ou igual a seis, incluindo o motorista",
+        "Valor_2025": 201.514896,
+        "Valor_2024": 122.09893798828125,
+        "Var_Pct": 65.04230499267578,
+        "Part_2025": 0.6626761555671692,
+        "Part_2024": 0.40260106325149536,
+        "MD_2025": 10.0757448,
+        "MD_2024": 6.426259994506836
+      },
+      {
+        "Produto": "Outros aviões e outros veículos aéreos, de peso superior a 15.000 kg, vazios",
+        "Valor_2025": 163.136048,
+        "Valor_2024": 123.64559936523438,
+        "Var_Pct": 31.93842124938965,
+        "Part_2025": 0.5364683866500854,
+        "Part_2024": 0.40770092606544495,
+        "MD_2025": 8.1568024,
+        "MD_2024": 6.507662773132324
+      },
+      {
+        "Produto": "Automóveis com motor explosão, de cilindrada não superior a 1.000 cm3",
+        "Valor_2025": 139.617984,
+        "Valor_2024": 132.35232543945312,
+        "Var_Pct": 5.489635467529297,
+        "Part_2025": 0.45912986993789673,
+        "Part_2024": 0.43640995025634766,
+        "MD_2025": 6.9808992000000005,
+        "MD_2024": 6.965911388397217
+      },
+      {
+        "Produto": "Outros veículos automóveis com motor a explosão, carga <= 5 toneladas",
+        "Valor_2025": 130.22944,
+        "Valor_2024": 81.31893920898438,
+        "Var_Pct": 60.14651107788086,
+        "Part_2025": 0.42825591564178467,
+        "Part_2024": 0.26813575625419617,
+        "MD_2025": 6.511472,
+        "MD_2024": 4.279943943023682
+      },
+      {
+        "Produto": "Automóveis com motor explosão, 1500 < cm3 <= 3000, até 6 passageiros",
+        "Valor_2025": 119.309032,
+        "Valor_2024": 86.498046875,
+        "Var_Pct": 37.93263244628906,
+        "Part_2025": 0.3923444449901581,
+        "Part_2024": 0.28521302342414856,
+        "MD_2025": 5.9654516,
+        "MD_2024": 4.5525288581848145
+      },
+      {
+        "Produto": "Pasta química de madeira, para dissolução",
+        "Valor_2025": 118.498016,
+        "Valor_2024": 33.259307861328125,
+        "Var_Pct": 256.2852783203125,
+        "Part_2025": 0.3896774351596832,
+        "Part_2024": 0.10966707766056061,
+        "MD_2025": 5.9249008,
+        "MD_2024": 1.7504897117614746
+      },
+      {
+        "Produto": "Tratores rodoviários para semirreboques, unicamente com motor de pistão de ignição por compressão (diesel ou semidiesel)",
+        "Valor_2025": 112.575504,
+        "Valor_2024": 69.93417358398438,
+        "Var_Pct": 60.973514556884766,
+        "Part_2025": 0.3702014088630676,
+        "Part_2024": 0.2305963933467865,
+        "MD_2025": 5.6287752,
+        "MD_2024": 3.680746078491211
+      }
+    ]
+  }
+}
