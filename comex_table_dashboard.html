@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Comércio Exterior Brasileiro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+        h1 {
+            text-align: center;
+            color: #006400;
+            margin-bottom: 20px;
+        }
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .btn {
+            padding: 10px 15px;
+            border: none;
+            background-color: #e0e0e0;
+            color: #333;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .btn:hover {
+            background-color: #d0d0d0;
+        }
+        .btn.active {
+            background-color: #006400;
+            color: white;
+        }
+        .filter-group {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            padding: 12px 18px;
+            border: 1px solid #ccc;
+            background-color: #f8f8f8;
+            color: #333;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 1em;
+            transition: all 0.2s;
+            font-weight: bold;
+        }
+        .filter-btn:hover {
+            background-color: #e8e8e8;
+        }
+        .filter-btn.active {
+            background-color: #4a7c59;
+            color: white;
+            border-color: #4a7c59;
+        }
+        .step-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .step-title {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            color: #555;
+            font-weight: bold;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: right;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        td:first-child, th:first-child {
+            text-align: left;
+        }
+        tr.sector-row {
+            background-color: #e6f2e6;
+            font-weight: bold;
+        }
+        .positive {
+            color: green;
+        }
+        .negative {
+            color: red;
+        }
+        .download-btn {
+            margin-top: 20px;
+            text-align: right;
+        }
+        .download-link {
+            background-color: #006400;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .download-link:hover {
+            background-color: #004d00;
+        }
+        #date-info {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .loading {
+            text-align: center;
+            padding: 20px;
+            font-style: italic;
+            color: #666;
+        }
+        .hidden {
+            display: none;
+        }
+        .data-view-container {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Análise de Comércio Exterior Brasileiro</h1>
+        
+        <div id="date-info">
+            Dados de Abril/2025
+        </div>
+        
+        <!-- Step 1: Escolha da Classificação -->
+        <div class="step-container" id="step1">
+            <div class="step-title">Passo 1: Escolha como classificar os produtos</div>
+            <div class="filter-group">
+                <button class="filter-btn active" data-filter="participation">Maiores Participações</button>
+                <button class="filter-btn" data-filter="increase">Maiores Aumentos</button>
+                <button class="filter-btn" data-filter="decrease">Maiores Quedas</button>
+            </div>
+        </div>
+        
+        <!-- Step 2: Escolha da Tabela (inicialmente visível) -->
+        <div class="step-container" id="step2">
+            <div class="step-title">Passo 2: Escolha o tipo de dados</div>
+            <div class="btn-group">
+                <button class="btn active" data-view="exp-monthly">Exportação Mensal</button>
+                <button class="btn" data-view="exp-ytd">Exportação Acumulada (YTD)</button>
+                <button class="btn" data-view="exp-12m">Exportação Acumulada (12m)</button>
+                <button class="btn" data-view="imp-monthly">Importação Mensal</button>
+                <button class="btn" data-view="imp-ytd">Importação Acumulada (YTD)</button>
+                <button class="btn" data-view="imp-12m">Importação Acumulada (12m)</button>
+            </div>
+        </div>
+        
+        <!-- Container for Data Views (Inicialmente visível) -->
+        <div class="data-view-container" id="data-container">
+            <!-- Exportação Mensal -->
+            <div id="exp-monthly" class="tab-content active">
+                <h2>Exportações de Abril/2025 - US$ Milhões</h2>
+                <div class="loading">Carregando dados...</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Produto/Setor</th>
+                            <th>Valor<br>2025</th>
+                            <th>MD<br>2025</th>
+                            <th>Valor<br>2024</th>
+                            <th>MD<br>2024</th>
+                            <th>Var %</th>
+                            <th>Part(%)<br>2025</th>
+                            <th>Part(%)<br>2024</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Conteúdo carregado dinamicamente -->
+                    </tbody>
+                </table>
+                
+                <div class="download-btn">
+                    <a href="#" class="download-link">Baixar tabela</a>
+                </div>
+            </div>
+            
+            <!-- Exportação YTD -->
+            <div id="exp-ytd" class="tab-content">
+                <h2>Exportações Acumuladas Jan-Abr/2025 - US$ Milhões</h2>
+                <div class="loading">Carregando dados...</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Produto/Setor</th>
+                            <th>Valor<br>2025</th>
+                            <th>MD<br>2025</th>
+                            <th>Valor<br>2024</th>
+                            <th>MD<br>2024</th>
+                            <th>Var %</th>
+                            <th>Part(%)<br>2025</th>
+                            <th>Part(%)<br>2024</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Conteúdo carregado dinamicamente -->
+                    </tbody>
+                </table>
+                
+                <div class="download-btn">
+                    <a href="#" class="download-link">Baixar tabela</a>
+                </div>
+            </div>
+            
+            <!-- Exportação 12M -->
+            <div id="exp-12m" class="tab-content">
+                <h2>Exportações Acumuladas 12 meses (Mai/2024-Abr/2025) - US$ Milhões</h2>
+                <div class="loading">Carregando dados...</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Produto/Setor</th>
+                            <th>Valor<br>2025</th>
+                            <th>Valor<br>2024</th>
+                            <th>Var %</th>
+                            <th>Part(%)<br>2025</th>
+                            <th>Part(%)<br>2024</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Conteúdo carregado dinamicamente -->
+                    </tbody>
+                </table>
+                
+                <div class="download-btn">
+                    <a href="#" class="download-link">Baixar tabela</a>
+                </div>
+            </div>
+            
+            <!-- Importação Mensal -->
+            <div id="imp-monthly" class="tab-content">
+                <h2>Importações de Abril/2025 - US$ Milhões</h2>
+                <div class="loading">Carregando dados...</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Produto/Setor</th>
+                            <th>Valor<br>2025</th>
+                            <th>MD<br>2025</th>
+                            <th>Valor<br>2024</th>
+                            <th>MD<br>2024</th>
+                            <th>Var %</th>
+                            <th>Part(%)<br>2025</th>
+                            <th>Part(%)<br>2024</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Conteúdo carregado dinamicamente -->
+                    </tbody>
+                </table>
+                
+                <div class="download-btn">
+                    <a href="#" class="download-link">Baixar tabela</a>
+                </div>
+            </div>
+            
+            <!-- Importação YTD -->
+            <div id="imp-ytd" class="tab-content">
+                <h2>Importações Acumuladas Jan-Abr/2025 - US$ Milhões</h2>
+                <div class="loading">Carregando dados...</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Produto/Setor</th>
+                            <th>Valor<br>2025</th>
+                            <th>MD<br>2025</th>
+                            <th>Valor<br>2024</th>
+                            <th>MD<br>2024</th>
+                            <th>Var %</th>
+                            <th>Part(%)<br>2025</th>
+                            <th>Part(%)<br>2024</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Conteúdo carregado dinamicamente -->
+                    </tbody>
+                </table>
+                
+                <div class="download-btn">
+                    <a href="#" class="download-link">Baixar tabela</a>
+                </div>
+            </div>
+            
+            <!-- Importação 12M -->
+            <div id="imp-12m" class="tab-content">
+                <h2>Importações Acumuladas 12 meses (Mai/2024-Abr/2025) - US$ Milhões</h2>
+                <div class="loading">Carregando dados...</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Produto/Setor</th>
+                            <th>Valor<br>2025</th>
+                            <th>Valor<br>2024</th>
+                            <th>Var %</th>
+                            <th>Part(%)<br>2025</th>
+                            <th>Part(%)<br>2024</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Conteúdo carregado dinamicamente -->
+                    </tbody>
+                </table>
+                
+                <div class="download-btn">
+                    <a href="#" class="download-link">Baixar tabela</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabId) {
+            // Esconder todos os conteúdos
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Mostrar o conteúdo selecionado
+            document.getElementById(tabId).classList.add('active');
+            
+            // Atualizar os botões ativos
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // Ativar o botão clicado
+            event.target.classList.add('active');
+            
+            // Atualizar o título da página conforme a visualização
+            updateDateInfo(tabId);
+        }
+        
+        function updateDateInfo(tabId) {
+            const dateInfo = document.getElementById('date-info');
+            
+            if (tabId.includes('monthly')) {
+                dateInfo.textContent = 'Dados de Abril/2025';
+            } else if (tabId.includes('ytd')) {
+                dateInfo.textContent = 'Dados Acumulados de Janeiro a Abril/2025';
+            } else if (tabId.includes('12m')) {
+                dateInfo.textContent = 'Dados Acumulados de Maio/2024 a Abril/2025';
+            }
+        }
+    </script>
+    
+    <!-- Incluir o script de carregamento de dados -->
+    <script src="load_table_data.js"></script>
+</body>
+</html> 
