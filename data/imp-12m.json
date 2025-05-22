@@ -1,0 +1,278 @@
+{
+  "A - Agropecuária": {
+    "sector_data": {
+      "Produto": "A - Agropecuária",
+      "Valor_2025": 15900.5732421875,
+      "Valor_2024": 5184.197265625,
+      "Var_Pct": 206.71237182617188,
+      "Part_2025": 5.860134124755859,
+      "Part_2024": 6.391480445861816
+    },
+    "products_data": [
+      {
+        "Produto": "Outros trigos e misturas de trigo com centeio, exceto para semeadura",
+        "Valor_2025": 1685.758208,
+        "Valor_2024": 514.593505859375,
+        "Var_Pct": 227.5902557373047,
+        "Part_2025": 0.621283769607544,
+        "Part_2024": 0.6344307661056519
+      },
+      {
+        "Produto": "Salmão-do-atlantico e salmão-do-danubio, fresco ou refrigerado",
+        "Valor_2025": 793.69664,
+        "Valor_2024": 304.0552673339844,
+        "Var_Pct": 161.03697204589844,
+        "Part_2025": 0.2925157845020294,
+        "Part_2024": 0.3748629093170166
+      },
+      {
+        "Produto": "Malte não torrado, inteiro ou partido",
+        "Valor_2025": 627.807936,
+        "Valor_2024": 251.32476806640625,
+        "Var_Pct": 149.79946899414062,
+        "Part_2025": 0.2313777357339859,
+        "Part_2024": 0.309852659702301
+      },
+      {
+        "Produto": "Azeite de oliva (oliveira) extra virgem",
+        "Valor_2025": 575.16672,
+        "Valor_2024": 238.3681640625,
+        "Var_Pct": 141.29342651367188,
+        "Part_2025": 0.21197688579559326,
+        "Part_2024": 0.2938787341117859
+      },
+      {
+        "Produto": "Leite integral, em pó, com um teor, em peso, de matérias gordas, superior a 1,5 %, sem adição de açúcar ou de outros edulcorantes",
+        "Valor_2025": 546.302464,
+        "Valor_2024": 172.35397338867188,
+        "Var_Pct": 216.9654083251953,
+        "Part_2025": 0.201338991522789,
+        "Part_2024": 0.21249133348464966
+      },
+      {
+        "Produto": "Outros vinhos, mostos de uvas, fermentados, impedidos álcool, em recipientes de capacidade não superior a 2 litros",
+        "Valor_2025": 488.727712,
+        "Valor_2024": 126.03475189208984,
+        "Var_Pct": 287.7721862792969,
+        "Part_2025": 0.18011991679668427,
+        "Part_2024": 0.15538541972637177
+      },
+      {
+        "Produto": "Batatas, preparadas ou conservadas, exceto em vinagre ou em ácido acético, congeladas",
+        "Valor_2025": 436.441568,
+        "Valor_2024": 161.30596923828125,
+        "Var_Pct": 170.56753540039062,
+        "Part_2025": 0.160849928855896,
+        "Part_2024": 0.1988704949617386
+      },
+      {
+        "Produto": "Cacau inteiro ou partido, em bruto ou torrado",
+        "Valor_2025": 410.120064,
+        "Valor_2024": 101.7783432006836,
+        "Var_Pct": 302.95416259765625,
+        "Part_2025": 0.15114916861057281,
+        "Part_2024": 0.12548023462295532
+      },
+      {
+        "Produto": "Arroz semibranqueado ou branqueado, não parboilizado, polido ou brunido",
+        "Valor_2025": 402.321184,
+        "Valor_2024": 144.95526123046875,
+        "Var_Pct": 177.54852294921875,
+        "Part_2025": 0.14827491343021393,
+        "Part_2024": 0.17871209979057312
+      },
+      {
+        "Produto": "Outras preparações dos tipos utilizados na alimentação de animais",
+        "Valor_2025": 393.565504,
+        "Valor_2024": 104.20917510986328,
+        "Var_Pct": 277.66876220703125,
+        "Part_2025": 0.14504802227020264,
+        "Part_2024": 0.12847714126110077
+      }
+    ]
+  },
+  "B - Indústria Extrativa": {
+    "sector_data": {
+      "Produto": "B - Indústria Extrativa",
+      "Valor_2025": 39972.43359375,
+      "Valor_2024": 13623.1162109375,
+      "Var_Pct": 193.41624450683594,
+      "Part_2025": 14.731783866882324,
+      "Part_2024": 16.79563331604004
+    },
+    "products_data": [
+      {
+        "Produto": "Gasóleo (óleo diesel)",
+        "Valor_2025": 8436.8512,
+        "Valor_2024": 2729.856201171875,
+        "Var_Pct": 209.05845642089844,
+        "Part_2025": 3.1093897819519043,
+        "Part_2024": 3.3655784130096436
+      },
+      {
+        "Produto": "Óleos brutos de petróleo",
+        "Valor_2025": 7766.047744,
+        "Valor_2024": 3161.337158203125,
+        "Var_Pct": 145.6570587158203,
+        "Part_2025": 2.862166166305542,
+        "Part_2024": 3.8975412845611572
+      },
+      {
+        "Produto": "Hulha betuminosa, não aglomerada",
+        "Valor_2025": 2595.48544,
+        "Valor_2024": 1024.60693359375,
+        "Var_Pct": 153.3152313232422,
+        "Part_2025": 0.9565625190734863,
+        "Part_2024": 1.2632149457931519
+      },
+      {
+        "Produto": "Naftas para petroquimica",
+        "Valor_2025": 2553.600768,
+        "Valor_2024": 954.9686279296875,
+        "Var_Pct": 167.4015350341797,
+        "Part_2025": 0.9411259293556213,
+        "Part_2024": 1.1773593425750732
+      },
+      {
+        "Produto": "Gás natural liquefeito",
+        "Valor_2025": 2116.095744,
+        "Valor_2024": 267.7419128417969,
+        "Var_Pct": 690.3490600585938,
+        "Part_2025": 0.7798840999603271,
+        "Part_2024": 0.33009299635887146
+      },
+      {
+        "Produto": "Outras gasolinas, exceto para aviação",
+        "Valor_2025": 1265.889024,
+        "Valor_2024": 546.9423828125,
+        "Var_Pct": 131.4483184814453,
+        "Part_2025": 0.4665416181087494,
+        "Part_2024": 0.6743130087852478
+      },
+      {
+        "Produto": "Gás natural no estado gasoso",
+        "Valor_2025": 1174.420224,
+        "Valor_2024": 437.5522155761719,
+        "Var_Pct": 168.4068603515625,
+        "Part_2025": 0.43283089995384216,
+        "Part_2024": 0.5394483208656311
+      },
+      {
+        "Produto": "Energia elétrica",
+        "Valor_2025": 1034.317952,
+        "Valor_2024": 309.3033752441406,
+        "Var_Pct": 234.4024200439453,
+        "Part_2025": 0.38119643926620483,
+        "Part_2024": 0.3813331723213196
+      },
+      {
+        "Produto": "Coques com granulometria inferior a 80 mm",
+        "Valor_2025": 929.921728,
+        "Valor_2024": 342.45819091796875,
+        "Var_Pct": 171.54315185546875,
+        "Part_2025": 0.3427213430404663,
+        "Part_2024": 0.4222089946269989
+      },
+      {
+        "Produto": "Óleos lubrificantes sem aditivos",
+        "Valor_2025": 662.938816,
+        "Valor_2024": 303.45538330078125,
+        "Var_Pct": 118.46334838867188,
+        "Part_2025": 0.2443251609802246,
+        "Part_2024": 0.37412333488464355
+      }
+    ]
+  },
+  "C - Indústria de Transformação": {
+    "sector_data": {
+      "Produto": "C - Indústria de Transformação",
+      "Valor_2025": 215461.625,
+      "Valor_2024": 62303.7421875,
+      "Var_Pct": 245.82452392578125,
+      "Part_2025": 79.4080810546875,
+      "Part_2024": 76.8128890991211
+    },
+    "products_data": [
+      {
+        "Produto": "Partes de turborreatores ou de turbopropulsores",
+        "Valor_2025": 5560.66048,
+        "Valor_2024": 1276.248291015625,
+        "Var_Pct": 335.70367431640625,
+        "Part_2025": 2.0493736267089844,
+        "Part_2024": 1.573457956314087
+      },
+      {
+        "Produto": "Outros cloretos de potássio",
+        "Valor_2025": 3681.71264,
+        "Valor_2024": 946.708984375,
+        "Var_Pct": 288.8959045410156,
+        "Part_2025": 1.356890082359314,
+        "Part_2024": 1.1671762466430664
+      },
+      {
+        "Produto": "Turborreatores de empuxo superior a 25 kN",
+        "Valor_2025": 3575.939584,
+        "Valor_2024": 1039.601318359375,
+        "Var_Pct": 243.97219848632812,
+        "Part_2025": 1.317907452583313,
+        "Part_2024": 1.2817010879516602
+      },
+      {
+        "Produto": "Outros veículos automóveis com motor diesel, para carga <= 5 toneladas",
+        "Valor_2025": 3290.319616,
+        "Valor_2024": 818.2759399414062,
+        "Var_Pct": 302.1039123535156,
+        "Part_2025": 1.2126426696777344,
+        "Part_2024": 1.0088340044021606
+      },
+      {
+        "Produto": "Outros produtos imunológicos, apresentados em doses ou acondicionados para venda a retalho",
+        "Valor_2025": 3284.951552,
+        "Valor_2024": 1231.375244140625,
+        "Var_Pct": 166.77096557617188,
+        "Part_2025": 1.2106642723083496,
+        "Part_2024": 1.5181348323822021
+      },
+      {
+        "Produto": "Plataformas de perfuração ou de exploração, flutuantes ou submersíveis",
+        "Valor_2025": 2854.203392,
+        "Valor_2024": 0.0,
+        "Var_Pct": 0,
+        "Part_2025": 1.0519126653671265,
+        "Part_2024": 0.0
+      },
+      {
+        "Produto": "Ureia, mesmo em solução aquosa, com teor de nitrogênio (azoto) superior a 45 %, em peso, calculado sobre o produto anidro no estado seco",
+        "Valor_2025": 2677.656064,
+        "Valor_2024": 651.7886352539062,
+        "Var_Pct": 310.8166198730469,
+        "Part_2025": 0.9868463277816772,
+        "Part_2024": 0.8035755753517151
+      },
+      {
+        "Produto": "Cátodos e seus elementos de cobre refinado, em formas brutas",
+        "Valor_2025": 2654.501888,
+        "Valor_2024": 774.06982421875,
+        "Var_Pct": 242.92796325683594,
+        "Part_2025": 0.9783129096031189,
+        "Part_2024": 0.9543333053588867
+      },
+      {
+        "Produto": "Diidrogeno-ortofosfato de amônio (fosfato monoamônico ou monoamoniacal), mesmo misturado com hidrogeno-ortofosfato de diamônio (fosfato diamônico ou diamoniacal)",
+        "Valor_2025": 2489.928192,
+        "Valor_2024": 535.1176147460938,
+        "Var_Pct": 365.3048400878906,
+        "Part_2025": 0.9176595211029053,
+        "Part_2024": 0.6597344875335693
+      },
+      {
+        "Produto": "Células fotovoltaicas montadas em módulos ou em painéis",
+        "Valor_2025": 2259.489536,
+        "Valor_2024": 1076.94775390625,
+        "Var_Pct": 109.80493927001953,
+        "Part_2025": 0.8327317237854004,
+        "Part_2024": 1.327744722366333
+      }
+    ]
+  }
+}
